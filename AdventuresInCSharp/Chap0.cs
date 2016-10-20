@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventuresInCSharp
 {
     public class Chap0
     {
-
         public string[] proText = {
             "Welcome to the City Library History Dept.                       Today's date is 10-1-2016",
             "-----------------------------------------------------------------------------------------",
@@ -44,13 +39,12 @@ namespace AdventuresInCSharp
 
         public void show()
         {
-          
             int strLine = 5;
             foreach (string text in proText)
-             {
+            {
                 strLine++;
-                Program.CenterText(text, strLine);      
-             }
+                Program.CenterText(text, strLine);
+            }
 
             Console.ReadKey();
             Console.Clear();
@@ -61,22 +55,15 @@ namespace AdventuresInCSharp
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
 
-
             int strLine2 = 5;
             foreach (string text in proText2)
             {
                 strLine2++;
                 Program.CenterText(text, strLine2);
             }
-            
+
             Console.ReadKey();
             Console.Clear();
-
-
         }
-
-
-        }
-
     }
-
+}

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventuresInCSharp
 {
@@ -10,22 +6,20 @@ namespace AdventuresInCSharp
     {
         public static void show()
         {
-            
             Program.CenterText("What name will you give the old man?", 12);
             Console.CursorVisible = true;
-            Console.SetCursorPosition((Console.WindowWidth - 9)/ 2, 13);
+            Console.SetCursorPosition((Console.WindowWidth - 9) / 2, 13);
             var P1 = new Player();
             var P2 = Console.ReadLine();
             Player.setName(P2);
             Console.CursorVisible = false;
             Console.Clear();
-            Program.CenterText("Are you sure you want to be called "+ Player.getName() + " ?", 15);
+            Program.CenterText("Are you sure you want to be called " + Player.getName() + " ?", 15);
             Program.CenterText("press Y for yes or N for no", 20);
             ConsoleKeyInfo answer = Console.ReadKey();
 
             if (answer.KeyChar == 'y' || answer.KeyChar == 'Y')
             {
-                
                 Console.Clear();
                 return;
             }
@@ -42,9 +36,6 @@ namespace AdventuresInCSharp
                 Console.Clear();
                 show();
             }
-
         }
-        
-
     }
 }

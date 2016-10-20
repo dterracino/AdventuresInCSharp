@@ -6,7 +6,7 @@
  */
 
 /* Notes:
- * 
+ *
  * ()UI design and layout
  * ****(X)Set window size to allow for screen formatting Height = 40 Width = 120
  * ****()Health and XP layout
@@ -34,24 +34,18 @@
  * ()Achievements
  * ()Quest Rewards
  * ()Map
- * 
+ *
  * screen / scene methods and a state, player, monster class would probably be something that's easy to figure out on how to do it
  *
  */
 
-
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace AdventuresInCSharp
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
             //Set Console Dimensions and Settings
             int height = 40;
@@ -62,22 +56,17 @@ namespace AdventuresInCSharp
             //beginning of game
             TitlePage.show();
             new Chap0().show();
-           CharCreator.show();
+            CharCreator.show();
             new Chap1().show();
- 
+
             //Do not remove until done.
             Console.ReadKey();
         }
 
-        public static void CenterText(string text,int line)
+        public static void CenterText(string text, int line)
         {
             Console.SetCursorPosition((Console.WindowWidth - text.Length) / 2, line);
             Console.WriteLine(text);
         }
-
     }
 }
-
-
-
-

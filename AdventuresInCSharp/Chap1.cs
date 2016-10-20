@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventuresInCSharp
+﻿namespace AdventuresInCSharp
 {
-    class Chap1
+    internal class Chap1
     {
-        
         public string[] ch1txt = {
             "\n\n\n",
             "\n\n\n",
@@ -19,17 +12,14 @@ namespace AdventuresInCSharp
             ""
         };
 
-
         public void show()
         {
-
             int strLine = 5;
             foreach (string text in ch1txt)
             {
                 strLine++;
                 Program.CenterText(text, strLine);
             }
-
         }
     }
 }

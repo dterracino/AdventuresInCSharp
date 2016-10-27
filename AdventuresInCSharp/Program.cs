@@ -57,7 +57,7 @@ namespace AdventuresInCSharp
             TitlePage.show();
             Chap0.show();
             CharCreator.show();
-            new Chap1().show();
+            Chap1.show();
 
             //Do not remove until done.
             Console.ReadKey();

@@ -1,40 +1,39 @@
-﻿using System;
+﻿namespace AdventuresInCSharp {
+    using System.Linq;
 
-namespace AdventuresInCSharp
-{
-    public class CharCreator
-    {
-        public static void show()
-        {
-            Program.CenterText("What name will you give the old man?", 12);
-            Console.CursorVisible = true;
-            Console.SetCursorPosition((Console.WindowWidth - 9) / 2, 13);
-            //var P1 = new Player();
-            var P2 = Console.ReadLine();
-            Player.Name = P2;
-            Console.CursorVisible = false;
-            Console.Clear();
-            Program.CenterText("Are you sure you want to be called " + Player.Name + " ?", 15);
-            Program.CenterText("press Y for yes or N for no", 20);
-            ConsoleKeyInfo answer = Console.ReadKey();
+    public class CharCreator : IChapter {
+        private readonly Player player;
+        private readonly IPrinter printer;
 
-            if (answer.KeyChar == 'y' || answer.KeyChar == 'Y')
-            {
-                Console.Clear();
-                return;
-            }
-            else if (answer.KeyChar == 'n' || answer.KeyChar == 'N')
-            {
-                Console.Clear();
-                show();
-            }
-            else
-            {
-                Console.Clear();
-                Program.CenterText("You did not give a correct response... to try again press any key", 12);
-                Console.ReadKey();
-                Console.Clear();
-                show();
+        public CharCreator(IPrinter printer, Player player) {
+            this.printer = printer;
+            this.player = player;
+        }
+
+        public void Show() {
+            bool nameOk = false;
+            while(!nameOk) {
+                printer.WriteLineByCharacter("What name will you give the old man?", TextAlign.Center);
+                printer.CursorVisible = true;
+                printer.AlignCursorUnderPrevious();
+
+                player.Name = printer.GetUserInput();
+
+                printer.CursorVisible = false;
+                printer.Clear();
+                printer.WriteLineByCharacter("Are you sure you want to be called " + player.Name + " ?", TextAlign.Center);
+                printer.WriteLineByCharacter("press Y for yes or N for no", TextAlign.Center);
+                printer.AlignCursorCenter();
+                string answer = printer.GetUserInput();
+
+                printer.Clear();
+                if (answer.ToLower().First() == 'y') {
+                    nameOk = true;
+                } else if (answer.ToLower().First() != 'n') {
+                    printer.WriteLineByCharacter("You did not give a correct response... to try again press any key", TextAlign.Center);
+                    printer.WaitForUser();
+                    printer.Clear();
+                }
             }
         }
     }

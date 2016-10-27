@@ -1,72 +1,24 @@
-﻿/* Overall Goals:
- * Learn to program.
- * Learn the C# language.
- * Make a text adventure game to help to learn and teach the basics of C# programming.
- * Have FUN! If it is not fun then don't do it!
- */
+﻿namespace AdventuresInCSharp {
+    using System;
+    using System.Collections.Generic;
 
-/* Notes:
- *
- * ()UI design and layout
- * ****(X)Set window size to allow for screen formatting Height = 40 Width = 120
- * ****()Health and XP layout
- * ()Health system
- * ****()Reading Books recharge health
- * ()XP sysytem
- * ()Level system
- * ()Inventory system
- * ()Create multiple choice Q and A battles
- * ****()Timed battle system
- * ****()Wrong answer removes health
- * ****()Correct answer damages enemy
- * ()Library of books
- * ()Location list
- * ()Money system
- * ()Store system
- * ()UI design and layout
- * ()List of Q and A
- * ()Quest system
- * ()Saving and Loading
- * ()Movement
- * ()Items list
- * ()Enemy List
- * ()Loot System
- * ()Achievements
- * ()Quest Rewards
- * ()Map
- *
- * screen / scene methods and a state, player, monster class would probably be something that's easy to figure out on how to do it
- *
- */
-
-using System;
-
-namespace AdventuresInCSharp
-{
-    internal class Program
-    {
-        private static void Main()
-        {
+    internal class Program {
+        private static void Main() {
             //Set Console Dimensions and Settings
             int height = 40;
             int width = 120;
             Console.SetWindowSize(width, height);
-            Console.CursorVisible = false;
+            IPrinter printer = new Printer(width) { CursorVisible = false };
+            var player = new Player();
 
             //beginning of game
-            TitlePage.show();
-            Chap0.show();
-            CharCreator.show();
-            Chap1.show();
+            IList<IChapter> chapters = new List<IChapter> { new TitlePage(printer), new Chap0(printer), new CharCreator(printer, player), new Chap1(printer, player) };
+            foreach(IChapter chapter in chapters) {
+                chapter.Show();
+            }
 
             //Do not remove until done.
             Console.ReadKey();
-        }
-
-        public static void CenterText(string text, int line)
-        {
-            Console.SetCursorPosition((Console.WindowWidth - text.Length) / 2, line);
-            Console.WriteLine(text);
         }
     }
 }

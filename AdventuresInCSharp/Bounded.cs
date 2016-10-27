@@ -5,7 +5,7 @@
     ///     A value T Current clamped between a T Base and T Max. Attempting to set beyond these bounds will round to the
     ///     closest bound.
     /// </summary>
-    public struct Bounded<T> where T : struct, IComparable<T> {
+    public class Bounded<T> where T : struct, IComparable<T> {
         public T Max { get; }
         public T Base { get; }
 

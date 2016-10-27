@@ -2,233 +2,331 @@
 {
     public class Player
     {
-        private static string _name { get; set; }
-        private static int _level { get; set; }
-        private static int _healthMax { get; set; }
-        private static int _healthCurrentMax { get; set; }
-        private static int _healthCurrent { get; set; }
-        private static int _xpMax { get; set; }
-        private static int _xpToNext { get; set; }
-        private static int _xpCurrent { get; set; }
-        private static int _moneyMax { get; set; }
-        private static int _moneyCurrent { get; set; }
-        private static int _strBase { get; set; }
-        private static int _strMax { get; set; }
-        private static int _strCurrent { get; set; }
-        private static int _defBase { get; set; }
-        private static int _defMax { get; set; }
-        private static int _defCurrent { get; set; }
-        private static int _spdBase { get; set; }
-        private static int _spdMax { get; set; }
-        private static int _spdCurrent { get; set; }
-
-        // _name
-        public static string getName()
+        private static string _name;
+        public static string Name //change to this format.
         {
-            return _name;
+            get { return _name; }
+            set { _name = value; }
+        }
+        private static int _level;
+        public static int Level
+        {
+            get { return _level; }
+            set { _level = value; }
+        }
+        private static int _healthMax;
+        public static int MaxHealth
+        {
+            get { return _healthMax; }
+            set { _healthMax = value; }
+        }
+        private static int _healthCurrentMax;
+        public static int CurrentMaxHealth
+        {
+            get { return _healthCurrentMax; }
+            set { _healthCurrentMax = value; }
+        }
+        private static int _healthCurrent;
+        public static int CurrentHealth
+        {
+            get { return _healthCurrent; }
+            set { _healthCurrent = value; }
+        }
+        private static int _xpMax;
+        public static int MaxXp
+        {
+            get { return _xpMax; }
+            set { _xpMax = value; }
+        }
+        private static int _xpToNext;
+        public static int XpToNext
+        {
+            get { return _xpToNext; }
+            set { _xpToNext = value; }
+        }
+        private static int _xpCurrent;
+        public static int CurrentXp
+        {
+            get { return _xpCurrent; }
+            set { _xpCurrent = value; }
+        }
+        private static int _moneyMax;
+        public static int MaxMoney
+        {
+            get { return _moneyMax; }
+            set { _moneyMax = value; }
+        }
+        private static int _moneyCurrent;
+        public static int CurrentMoney
+        {
+            get { return _moneyCurrent; }
+            set { _moneyCurrent = value; }
+        }
+        private static int _strBase;
+        public static int BaseStrength
+        {
+            get { return _strBase; }
+            set { _strBase = value; }
+        }
+        private static int _strMax;
+        public static int MaxStrength
+        {
+            get { return _strMax; }
+            set { _strMax = value; }
+        }
+        private static int _strCurrent;
+        public static int CurrentStrength
+        {
+            get { return _strCurrent; }
+            set { _strCurrent = value; }
+        }
+        private static int _defBase;
+        public static int BaseDefense
+        {
+            get { return _defBase; }
+            set { _defBase = value; }
+        }
+        private static int _defMax;
+        public static int MaxDefense
+        {
+            get { return _defMax; }
+            set { _defMax = value; }
+        }
+        private static int _defCurrent;
+        public static int CurrentDefense
+        {
+            get { return _defCurrent; }
+            set { _defCurrent = value; }
+        }
+        private static int _spdBase;
+        public static int BaseSpeed
+        {
+            get { return _spdBase; }
+            set { _spdBase = value; }
+        }
+        private static int _spdMax;
+        public static int MaxSpeed
+        {
+            get { return _spdMax; }
+            set { _spdMax = value; }
+        }
+        private static int _spdCurrent;
+        public static int CurrentSpeed
+        {
+            get { return _spdCurrent; }
+            set { _spdCurrent = value; }
         }
 
-        public static void setName(string name)
-        {
-            _name = name;
-        }
+        // To Be Removed...
+        /*---------------------------------------------------
+                // _name
+                public static string getName()
+                {
+                    return _name;
+                }
 
-        // _level... lvl 30 will be the max lvl.. at 536,870,912 XP
-        public static int getLevel()
-        {
-            return _level;
-        }
+                public static void setName(string name)
+                {
+                    _name = name;
+                }
 
-        public static void setLevel(int level)
-        {
-            _level = level;
-        }
+                // _level... lvl 30 will be the max lvl.. at 536,870,912 XP
+                public static int getLevel()
+                {
+                    return _level;
+                }
 
-        // _healthMax
-        public static int getHealthMax()
-        {
-            return _healthMax;
-        }
+                public static void setLevel(int level)
+                {
+                    _level = level;
+                }
 
-        public static void setHealthMax()
-        {
-            _healthMax = 1000;
-        }
+                // _healthMax
+                public static int getHealthMax()
+                {
+                    return _healthMax;
+                }
 
-        // _healthCurrentMax
-        public static int getHealthCurrentMax()
-        {
-            return _healthCurrentMax;
-        }
+                public static void setHealthMax()
+                {
+                    _healthMax = 1000;
+                }
 
-        public static void setHealthCurrentMax(int x)
-        {
-            _healthCurrentMax = _level * 10 + x; // level x 10 + Armor Mods... ie.. level 2 with +2 mod will equal 22
-        }
+                // _healthCurrentMax
+                public static int getHealthCurrentMax()
+                {
+                    return _healthCurrentMax;
+                }
 
-        // _healthCurrent
-        public static int getHealthCurrent()
-        {
-            return _healthCurrent;
-        }
+                public static void setHealthCurrentMax(int x)
+                {
+                    _healthCurrentMax = _level * 10 + x; // level x 10 + Armor Mods... ie.. level 2 with +2 mod will equal 22
+                }
 
-        public static void setHealthCurrent(int x)
-        {
-            _healthCurrent = x;
-        }
+                // _healthCurrent
+                public static int getHealthCurrent()
+                {
+                    return _healthCurrent;
+                }
 
-        // _xpMax
-        public static int getXpMax()
-        {
-            return _xpMax;
-        }
+                public static void setHealthCurrent(int x)
+                {
+                    _healthCurrent = x;
+                }
 
-        public static void setXpMax(int x)
-        {
-            _xpMax = 999999999;
-        }
+                // _xpMax
+                public static int getXpMax()
+                {
+                    return _xpMax;
+                }
 
-        // _xpToNext
-        public static int getXpToNext()
-        {
-            return _xpToNext;
-        }
+                public static void setXpMax(int x)
+                {
+                    _xpMax = 999999999;
+                }
 
-        public static void setXpToNext()
-        {
-            _xpToNext = 2 ^ (_level + 1);
-        }
+                // _xpToNext
+                public static int getXpToNext()
+                {
+                    return _xpToNext;
+                }
 
-        // _xpCurrent
-        public static int getXpCurrent()
-        {
-            return _xpCurrent;
-        }
+                public static void setXpToNext()
+                {
+                    _xpToNext = 2 ^ (_level + 1);
+                }
 
-        public static void setXpCurrent(int x)
-        {
-            _xpCurrent = x;
-        }
+                // _xpCurrent
+                public static int getXpCurrent()
+                {
+                    return _xpCurrent;
+                }
 
-        // _moneyMax
-        public static int getMoneyMax()
-        {
-            return _moneyMax;
-        }
+                public static void setXpCurrent(int x)
+                {
+                    _xpCurrent = x;
+                }
 
-        public static void setMoneyMax(int x)
-        {
-            _moneyMax = x;
-        }
+                // _moneyMax
+                public static int getMoneyMax()
+                {
+                    return _moneyMax;
+                }
 
-        // _moneyCurrent
-        public static int getMoneyCurrent()
-        {
-            return _moneyCurrent;
-        }
+                public static void setMoneyMax(int x)
+                {
+                    _moneyMax = x;
+                }
 
-        public static void setMoneyCurrent(int x)
-        {
-            _moneyCurrent = x;
-        }
+                // _moneyCurrent
+                public static int getMoneyCurrent()
+                {
+                    return _moneyCurrent;
+                }
 
-        // _strBase
-        public static int getStrBase()
-        {
-            return _strBase;
-        }
+                public static void setMoneyCurrent(int x)
+                {
+                    _moneyCurrent = x;
+                }
 
-        public static void setStrBase()
-        {
-            _strBase = 1;
-        }
+                // _strBase
+                public static int getStrBase()
+                {
+                    return _strBase;
+                }
 
-        // _strMax
-        public static int getStrMax()
-        {
-            return _strMax;
-        }
+                public static void setStrBase()
+                {
+                    _strBase = 1;
+                }
 
-        public static void setStrMax()
-        {
-            _strMax = 1000;
-        }
+                // _strMax
+                public static int getStrMax()
+                {
+                    return _strMax;
+                }
 
-        // _strCurrent
-        public static int getStrCurrent()
-        {
-            return _strCurrent;
-        }
+                public static void setStrMax()
+                {
+                    _strMax = 1000;
+                }
 
-        public static void setStrCurrent(int x)
-        {
-            _strCurrent = _level + _strBase + x;
-        }
+                // _strCurrent
+                public static int getStrCurrent()
+                {
+                    return _strCurrent;
+                }
 
-        // _defBase
-        public static int getDefBase()
-        {
-            return _defBase;
-        }
+                public static void setStrCurrent(int x)
+                {
+                    _strCurrent = _level + _strBase + x;
+                }
 
-        public static void setDefBase()
-        {
-            _defBase = 1;
-        }
+                // _defBase
+                public static int getDefBase()
+                {
+                    return _defBase;
+                }
 
-        // _defMax
-        public static int getDefMax()
-        {
-            return _defMax;
-        }
+                public static void setDefBase()
+                {
+                    _defBase = 1;
+                }
 
-        public static void setDefMax()
-        {
-            _defMax = 1000;
-        }
+                // _defMax
+                public static int getDefMax()
+                {
+                    return _defMax;
+                }
 
-        // _defCurrent
-        public static int getDefCurrent()
-        {
-            return _defCurrent;
-        }
+                public static void setDefMax()
+                {
+                    _defMax = 1000;
+                }
 
-        public static void setDefCurrent(int x)
-        {
-            _defCurrent = _level + _defBase + x;
-        }
+                // _defCurrent
+                public static int getDefCurrent()
+                {
+                    return _defCurrent;
+                }
 
-        // _spdBase
-        public static int getSpdBase()
-        {
-            return _spdBase;
-        }
+                public static void setDefCurrent(int x)
+                {
+                    _defCurrent = _level + _defBase + x;
+                }
 
-        public static void setSpdBase()
-        {
-            _spdBase = 1;
-        }
+                // _spdBase
+                public static int getSpdBase()
+                {
+                    return _spdBase;
+                }
 
-        // _spdMax
-        public static int getSpdMax()
-        {
-            return _spdMax;
-        }
+                public static void setSpdBase()
+                {
+                    _spdBase = 1;
+                }
 
-        public static void setSpdMax()
-        {
-            _spdMax = 1000;
-        }
+                // _spdMax
+                public static int getSpdMax()
+                {
+                    return _spdMax;
+                }
 
-        // _spdCurrent
-        public static int getSpdCurrent()
-        {
-            return _spdCurrent;
-        }
+                public static void setSpdMax()
+                {
+                    _spdMax = 1000;
+                }
 
-        public static void setSpdCurrent(int x)
-        {
-            _spdCurrent = _level + _spdBase + x;
-        }
+                // _spdCurrent
+                public static int getSpdCurrent()
+                {
+                    return _spdCurrent;
+                }
+
+                public static void setSpdCurrent(int x)
+                {
+                    _spdCurrent = _level + _spdBase + x;
+                }
+          --------------------------------------------------*/
     }
 }

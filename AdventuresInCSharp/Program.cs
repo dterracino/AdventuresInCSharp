@@ -55,7 +55,7 @@ namespace AdventuresInCSharp
 
             //beginning of game
             TitlePage.show();
-            new Chap0().show();
+            Chap0.show();
             CharCreator.show();
             new Chap1().show();
 

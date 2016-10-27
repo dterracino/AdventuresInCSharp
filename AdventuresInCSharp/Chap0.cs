@@ -2,9 +2,9 @@
 
 namespace AdventuresInCSharp
 {
-    public class Chap0
+    public static class Chap0
     {
-        public string[] proText = {
+        public static string[] proText = {
             "Welcome to the City Library History Dept.                       Today's date is 10-1-2016",
             "-----------------------------------------------------------------------------------------",
             "\n\n\n",
@@ -27,7 +27,7 @@ namespace AdventuresInCSharp
             "555 A.D. The \"Four Keysmen of the 404\" disappear from any records                         "
         };
 
-        public string[] proText2 = {
+        public static string[] proText2 = {
             "\n\n\n",
             "\n\n\n",
             "\n\n\n",
@@ -37,7 +37,7 @@ namespace AdventuresInCSharp
             "\"I am not as feeble as you think, so answer me now....WHO ARE YOU?\" he demands"
         };
 
-        public void show()
+        public static void show()
         {
             int strLine = 5;
             foreach (string text in proText)
